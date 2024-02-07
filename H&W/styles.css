@@ -86,16 +86,21 @@
 
 .team-container {
     display: flex;
+    flex-wrap: wrap;
     grid-template-columns: repeat(3, 1fr);
     margin: 30px 20px 30px 20px;
+    align-items: center;
+    min-width: 15%;
 }
 
 .employee {
+    display: flex; 
     padding: 20px;
     box-sizing: border-box;
     background-color: #ECECEC;
-    align-items: center;
     flex-direction: column;
+    width: 33.3%;
+    flex: 1 1 30%;
   }
 
 .employee h2 {
@@ -107,6 +112,15 @@
   }
 
   .employee img {
-    width: 35%;
-    height: 180px;
+    width: auto;
+    height: auto;
+    max-height: 280px;
   }
+
+  @media (max-width: 768px) {
+    .team-container {
+      padding: 20px; /* Reduce padding for smaller screens */
+      flex-basis: calc(50% - 20px);
+      flex-direction: column; /* Stack items in a single column */
+      align-items: center; /* Center items horizontally */
+    }
