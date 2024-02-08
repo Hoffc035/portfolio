@@ -64,16 +64,18 @@
 .testimonials-container {
     display: flex;
     justify-content: space-between; 
+    flex-wrap: wrap;
 }
 
 .testimonial{
-    width: calc(33.33% - 10px); 
-    margin: 30px 20px 30px 20px;
+    width: calc(33.33% - 30px); 
+    margin: 30px 10px;
    /* border: 1px solid black; */
     border-radius: 10px;
     padding: 50px;
     box-sizing: border-box;   
     background-color: #ECECEC;
+    flex-direction: column;
 }
 
 .testimonial h2 {
@@ -88,9 +90,10 @@
     display: flex;
     flex-wrap: wrap;
     grid-template-columns: repeat(3, 1fr);
-    margin: 30px 20px 30px 20px;
-    align-items: center;
+    margin: 30px 10px;
+    align-items: stretch;
     min-width: 15%;
+    justify-content: space-between;
 }
 
 .employee {
@@ -112,9 +115,10 @@
   }
 
   .employee img {
-    width: auto;
+    width: 60%;
     height: auto;
     max-height: 280px;
+    margin: 0 auto; /* Center the image horizontally */
   }
 
   @media (max-width: 768px) {
@@ -124,3 +128,16 @@
       flex-direction: column; /* Stack items in a single column */
       align-items: center; /* Center items horizontally */
     }
+    
+    .testimonials-container {
+        padding: 20px; /* Reduce padding for smaller screens */
+        flex-basis: calc(50% - 20px);
+        flex-direction: column; /* Stack items in a single column */
+        align-items: center; /* Center items horizontally */
+      }
+    
+
+    .employee {
+      width: calc(50% - 20px); /* Adjust width to 50% for smaller screens */
+    }
+  }
